@@ -49,11 +49,6 @@ public class Main2Activity extends AppCompatActivity {
             R.drawable.a29,R.drawable.a30,R.drawable.a31,R.drawable.a32,R.drawable.a33};
     private MediaPlayer mp=new MediaPlayer();
 
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
