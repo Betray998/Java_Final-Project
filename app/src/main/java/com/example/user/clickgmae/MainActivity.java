@@ -20,9 +20,8 @@ public class MainActivity extends AppCompatActivity {
         btn =(Button) findViewById(R.id.start_button);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
+            public void onClick(View v)//當按下Button進到Main2Activity
             {
-
                 Intent i = new Intent();
                 i.setClass(MainActivity.this, Main2Activity.class);
                 startActivity(i);

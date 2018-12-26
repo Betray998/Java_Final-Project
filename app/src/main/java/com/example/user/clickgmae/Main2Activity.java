@@ -29,23 +29,22 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Main2Activity extends AppCompatActivity {
-//  private  Handler handler = new Handler();
-    ImageView star;
+    ImageView star; //怪物圖
     TextView ss;
-    TextView cod;
+    TextView cod;   //顯示倒數
     TextView kk;
     ImageView pic2;
-    ProgressBar mProgress;
 
-    int count = 0;
-    public static int count2=0;
+    int count = 0;//預設點擊數
+    public static int count2=0; //換圖數
     int a=0;
-    int ra1=(int)(Math.random()* 20 + 10);
+    int ra1=(int)(Math.random()* 20 + 10);//取亂數
     int[] picture={R.drawable.a2, R.drawable.a3,R.drawable.a4,R.drawable.a5,R.drawable.a6,R.drawable.a7,R.drawable.a8,R.drawable.a9,
             R.drawable.a11,R.drawable.a12,R.drawable.a13,R.drawable.a14,R.drawable.a15,R.drawable.a16,R.drawable.a17,R.drawable.a18,R.drawable.a19,
             R.drawable.a20,R.drawable.a21,R.drawable.a22,R.drawable.a23,R.drawable.a24,R.drawable.a25,R.drawable.a26,R.drawable.a27,R.drawable.a28,
-            R.drawable.a29,R.drawable.a30,R.drawable.a31,R.drawable.a32,R.drawable.a33};
-    private MediaPlayer mp=new MediaPlayer();
+            R.drawable.a29,R.drawable.a30,R.drawable.a31,R.drawable.a32,R.drawable.a33};//怪物圖檔
+    private MediaPlayer mp=new MediaPlayer();   //背景音樂
+
 
 
 
@@ -60,22 +59,19 @@ public class Main2Activity extends AppCompatActivity {
         kk=(TextView) findViewById(R.id.textView3);
         cod = (TextView)findViewById(R.id.down);
         pic2=(ImageView)findViewById(R.id.imageView2);
-        mProgress=(ProgressBar)findViewById(R.id.progressBar);
-        final MediaPlayer mp =MediaPlayer.create(this, R.raw.music);
-        mp.setLooping(true);
-        mp.start();
+        final MediaPlayer mp =MediaPlayer.create(this, R.raw.music3);//背景音樂
+        mp.setLooping(true);//持續播放
+        mp.start();//開始
 
-        star.setOnClickListener(new View.OnClickListener()
+        star.setOnClickListener(new View.OnClickListener()      //監聽怪物圖
         {
             public void onClick(View v)
             {
-                count++;
+                count++; //點擊一次就+1
                 showToast();
                 /* TODO: 被點擊後要執行的動作 */
 
-//           handler.postDelayed(runnable, 1000);
 //             pic2.setVisibility(View.VISIBLE); // 出現
-//                count++; //點擊一次就+1
 
                     if (count == ra1) //當亂數==點擊次數
                     {
@@ -84,43 +80,39 @@ public class Main2Activity extends AppCompatActivity {
                     }
 
 //             pic2.setVisibility(View.INVISIBLE); // 出現
-//                handler.postDelayed(runnable2, 3000);
-//                  kk.setText(String.valueOf(ra1));//顯示亂數值
+
             }
         });
 
 
-        new CountDownTimer(60000,1000)
+        new CountDownTimer(60000,1000) //倒數60秒，一次下數1秒
         {
             @Override
-            public void onFinish()
+            public void onFinish()  //跳往Main3Activity結算頁
             {
-//                cod.setText("Done!");
                 Intent intent = new Intent();
                 intent.setClass(Main2Activity.this, Main3Activity.class);
-//                Bundle bundle = new Bundle();
-//                bundle.putString("name", etName.getText().toString());
-//                intent.putExtras(bundle);
                 startActivityForResult(intent,0);
             }
             @Override
-            public void onTick(long millisUntilFinished) {
+            public void onTick(long millisUntilFinished) {              //顯示所剩時間
                 cod.setText("所剩時間:"+millisUntilFinished/1000);
             }
 
         }.start();
-        new CountDownTimer(1000,100){
-            @Override
-            public void onFinish(){
-                toast.cancel();
-                showToast();
-            }
-        };
 
-    }
+//        Toast toast=new Toast(Context){
+//            toast.show();
+//            new CountDownTimer(1000,100)
+//            {
+//                onFinish(); {
+//                toast.cancel;
+//            }
+//            }
+//        }
+       };
 
-
-    private void showToast(){
+    private void showToast(){       //顯示炸彈
         Toast toast = new Toast(Main2Activity.this);
         toast.setGravity(Gravity.TOP,400,400);
         toast.setDuration(Toast.LENGTH_SHORT);
