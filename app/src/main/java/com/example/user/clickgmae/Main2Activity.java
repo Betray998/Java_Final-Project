@@ -37,6 +37,8 @@ public class Main2Activity extends AppCompatActivity {
     ImageView pic2;
     ProgressBar mProgress;
 
+
+
     int count = 0;
     public static int count2=0;
     int a=0;
