@@ -66,6 +66,7 @@ public class Main2Activity extends AppCompatActivity {
 
         star.setOnClickListener(new View.OnClickListener()
         {
+            
             public void onClick(View v)
             {
                 count++;
