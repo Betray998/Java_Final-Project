@@ -5,14 +5,61 @@
     android:id="@+id/zxc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main2Activity">
+    tools:context=".Main2Activity"
+    android:background="@drawable/back3">
 
     <ImageView
-        android:id="@+id/iv"
+        android:id="@+id/imageView"
+        android:layout_width="334dp"
+        android:layout_height="228dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="300dp"
+        android:clickable="true"
+        android:src="@drawable/a1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/down"
+        android:layout_width="319dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:text="TextView"
+        android:textColor="@android:color/black"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
-        tools:layout_editor_absoluteX="150dp"
-        tools:layout_editor_absoluteY="198dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="224dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="223dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="300dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/boom" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="214dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="252dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
