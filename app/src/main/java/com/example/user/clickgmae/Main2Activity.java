@@ -53,9 +53,6 @@ public class Main2Activity extends AppCompatActivity {
     private MediaPlayer mp=new MediaPlayer();   //背景音樂
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -72,6 +69,7 @@ public class Main2Activity extends AppCompatActivity {
 
         star.setOnClickListener(new View.OnClickListener()      //監聽怪物圖
         {
+            
             public void onClick(View v)
             {
                 count++; //點擊一次就+1
