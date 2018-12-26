@@ -35,8 +35,15 @@ public class Main2Activity extends AppCompatActivity {
     TextView kk;
     ImageView pic2;
 
+<<<<<<< HEAD
     int count = 0;//預設點擊數
     public static int count2=0; //換圖數
+=======
+
+
+    int count = 0;
+    public static int count2=0;
+>>>>>>> 365368fe272c87b9eeba24cb4925d453992a6f51
     int a=0;
     int ra1=(int)(Math.random()* 20 + 10);//取亂數
     int[] picture={R.drawable.a2, R.drawable.a3,R.drawable.a4,R.drawable.a5,R.drawable.a6,R.drawable.a7,R.drawable.a8,R.drawable.a9,
