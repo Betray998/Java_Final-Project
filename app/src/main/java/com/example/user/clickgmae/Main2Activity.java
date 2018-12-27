@@ -61,12 +61,10 @@ public class Main2Activity extends AppCompatActivity {
 
         star.setOnClickListener(new View.OnClickListener()      //監聽怪物圖
         {
-            
+
             public void onClick(View v)
             {
 
-                mp.setLooping(true);//持續播放
-                mp.start();//開始
                 count++; //點擊一次就+1
                 showToast();
                 /* TODO: 被點擊後要執行的動作 */
@@ -78,6 +76,8 @@ public class Main2Activity extends AppCompatActivity {
                         star.setImageResource(picture[count2++]);//換圖
                         count = 0;
                     }
+                mp.setLooping(true);//持續播放
+                mp.start();//開始
 
 //             pic2.setVisibility(View.INVISIBLE); // 出現
 
@@ -113,13 +113,25 @@ public class Main2Activity extends AppCompatActivity {
        };
 
     private void showToast(){       //顯示炸彈
-        Toast toast = new Toast(Main2Activity.this);
+        final Toast toast = new Toast(Main2Activity.this);
         toast.setGravity(Gravity.TOP,400,400);
         toast.setDuration(Toast.LENGTH_SHORT);
         LayoutInflater inflater=getLayoutInflater();
         View layout=inflater.inflate(R.layout.activity_main4,(ViewGroup)findViewById(R.id.booom));
         toast.setView(layout);
         toast.show();
+        new CountDownTimer(500, 100) {
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                toast.cancel();
+            }
+        }.start();
     }
 
 @Override
