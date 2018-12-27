@@ -35,15 +35,8 @@ public class Main2Activity extends AppCompatActivity {
     TextView kk;
     ImageView pic2;
 
-<<<<<<< HEAD
     int count = 0;//預設點擊數
     public static int count2=0; //換圖數
-=======
-
-
-    int count = 0;
-    public static int count2=0;
->>>>>>> 365368fe272c87b9eeba24cb4925d453992a6f51
     int a=0;
     int ra1=(int)(Math.random()* 20 + 10);//取亂數
     int[] picture={R.drawable.a2, R.drawable.a3,R.drawable.a4,R.drawable.a5,R.drawable.a6,R.drawable.a7,R.drawable.a8,R.drawable.a9,
@@ -64,14 +57,16 @@ public class Main2Activity extends AppCompatActivity {
         cod = (TextView)findViewById(R.id.down);
         pic2=(ImageView)findViewById(R.id.imageView2);
         final MediaPlayer mp =MediaPlayer.create(this, R.raw.music3);//背景音樂
-        mp.setLooping(true);//持續播放
-        mp.start();//開始
+
 
         star.setOnClickListener(new View.OnClickListener()      //監聽怪物圖
         {
             
             public void onClick(View v)
             {
+
+                mp.setLooping(true);//持續播放
+                mp.start();//開始
                 count++; //點擊一次就+1
                 showToast();
                 /* TODO: 被點擊後要執行的動作 */
